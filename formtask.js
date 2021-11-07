@@ -81,7 +81,7 @@ jsubmit.addEventListener("click",(e)=>{
     var k=validname(a);
     var u=validage(b);
     var z=validmail(c);
-    var l=userpassword(d);
+    var l=validpas(d);
     console.log(b);
      if(k===0||u===0||z===0||l===0)
     {
