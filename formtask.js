@@ -47,31 +47,6 @@ function validmail(mail)
         return 0;
         }
     }
-    function userpassword(passwrd){
-        errors = [];
-        if (passwrd.length < 8) {
-            errors.push("Your password must be at least 8 characters");
-        }
-        if (passwrd.length > 15) {
-            errors.push("Your password must be 15 characters length");
-        }
-        if (passwrd.search(/[a-z]/i) < 0) {
-            errors.push("Your password must contain at least one letter."); 
-        }
-        if (passwrd.search(/[A-Z]/i) < 0) {
-            errors.push("Your password must contain at least one capital letter."); 
-        }
-        if (passwrd.search(/[0-9]/) < 0) {
-            errors.push("Your password must contain at least one digit.");
-        }
-        if (passwrd.search(/[@#!$%^&*]/) < 0) {
-            errors.push("Your password must contain at least one special character.");
-        }
-        if (errors.length > 0) {
-            return 0;
-        }
-        return 1;
-    }
 jsubmit.addEventListener("click",(e)=>{
     e.preventDefault();
     var a=jsname.value;
@@ -99,7 +74,7 @@ jsubmit.addEventListener("click",(e)=>{
         }
         if(l===0)
         {
-            alert(errors.join("\n"));
+            alert("Invalid Password");
         }
     }
     else
