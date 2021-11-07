@@ -6,7 +6,7 @@ let jsubmit=document.getElementById("button");
 let jsform=document.getElementById("form");
 function validname(name)
 {
-    let regName = /^[a-zA-Z]+$/;
+    let regName = /^[a-zA-Z\s]+$/;
     if(regName.test(name))
     {
     return 1;
@@ -82,7 +82,8 @@ jsubmit.addEventListener("click",(e)=>{
     var u=validage(b);
     var z=validmail(c);
     var l=userpassword(d);
-    if(k===0||u===0||z===0||l===0)
+    console.log(b);
+     if(k===0||u===0||z===0||l===0)
     {
         if(k===0)
         {
@@ -104,24 +105,24 @@ jsubmit.addEventListener("click",(e)=>{
     else
     {
         var diname=document.createElement('div');
-        diname.class="text-center mt-2";
+        diname.className="text-center mt-1";
         jsform.appendChild(diname);
         var pa=document.createElement("p");
-        pa.class="fs-1 fw-bold";
-        pa.innerHTML="<center><b>REGISTERED SUCCESSFULLY</b></center>";
+        pa.className="fs-3 fw-bold";
+        pa.innerHTML="REGISTERED SUCCESSFULLY";
         diname.appendChild(pa);
         if(k===1)
          {
             var divname=document.createElement('div');
-            divname.className ="col-md-4 mt-2";
+            divname.className="col-md-4 mt-1";
             jsform.appendChild(divname);
             var para = document.createElement("label");
-            para.class="form-label";
-            para.innerHTML = "Name:";
+            para.className="form-label";
+            para.innerHTML = "Name:<br>";
             divname.appendChild(para);
             var nametext=document.createElement("input");
             nametext.setAttribute("type","text");
-            nametext.class="form-control mt-1";
+            nametext.className="form-control mt-1";
             nametext.id="nametext1";
             divname.appendChild(nametext);
             document.getElementById("nametext1").value=a;
@@ -130,15 +131,15 @@ jsubmit.addEventListener("click",(e)=>{
         if(u===1)
         {
             var divname2=document.createElement('div');
-            divname2.className ="col-md-1 mt-2";
+            divname2.className ="col-md-1 mt-1";
             jsform.appendChild(divname2);
             var htage = document.createElement("label")
-            htage.class="form-label";
+            htage.className ="form-label";
             htage.innerHTML = "Age:";
             divname2.appendChild(htage);
             var agetext=document.createElement("input");
             agetext.setAttribute("type","text");
-            agetext.class="form-control mt-1";
+            agetext.className ="form-control mt-1";
             agetext.id="agetext1";
             divname2.appendChild(agetext);
             document.getElementById("agetext1").value=b;
@@ -146,19 +147,18 @@ jsubmit.addEventListener("click",(e)=>{
          if(z===1)
         {
             var divname3=document.createElement('div');
-            divname3.className ="col-md-1 mt-2"
+            divname3.className ="col-md-4 mt-1"
             jsform.appendChild(divname3);
             var htemail = document.createElement("label")
-            htemail.class="form-label";
+            htemail.className ="form-label";
             htemail.innerHTML = "Email:";
             divname3.appendChild(htemail);
             var mailtext=document.createElement("input");
             mailtext.setAttribute("type","text");
-            mailtext.class="form-control mt-1";
+            mailtext.className ="form-control mt-1";
             mailtext.id="mailtext1";
             divname3.appendChild(mailtext);
             document.getElementById("mailtext1").value=c;
         }
     }
  })
- 
