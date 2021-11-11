@@ -1,4 +1,7 @@
-.body{
+body{
+    background-image: url('p.jpg');
+    opacity:1;
+    background-size: cover;
     overflow-x: scroll;
     overflow-y: scroll;
 }
